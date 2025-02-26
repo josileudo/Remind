@@ -11,7 +11,7 @@ class SplashViewController: UIViewController {
     let contentView = SplashView()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()      
         
         setup()
     }
@@ -22,6 +22,7 @@ class SplashViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         setupConstraints()
+        setupGesture()
     }
     
     private func setupConstraints() {
@@ -33,5 +34,20 @@ class SplashViewController: UIViewController {
         ]) // Podemos configurar um a um, o uso do array é para evitar repetição
         
         contentView.translatesAutoresizingMaskIntoConstraints = false // sempre deve ser false
+    }
+    
+    private func setupGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showLoginBottomSheet))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    private func showLoginBottomSheet() {
+        let loginBottomSheet = LoginBottomSheetViewController()
+        loginBottomSheet.modalPresentationStyle = .overCurrentContext
+        loginBottomSheet.modalTransitionStyle = .crossDissolve
+        self.present(loginBottomSheet, animated: false) {
+            loginBottomSheet.animateShow()
+        }
     }
 }
