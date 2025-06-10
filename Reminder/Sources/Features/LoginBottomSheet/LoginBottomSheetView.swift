@@ -21,6 +21,7 @@ class LoginBottomSheetView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "login.label.title".localized
+        label.isUserInteractionEnabled = true
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -59,10 +60,19 @@ class LoginBottomSheetView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        
+        // OBS: Sempre que usarmos o #selector, devemos criar uma classe objc
+        let example = UITapGestureRecognizer(target: self, action: #selector(exampleTaped))
+        titleLabel.addGestureRecognizer(example)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc
+    public func exampleTaped() {
+        print("Clicou na label")
     }
     
     public func setupUI() {
