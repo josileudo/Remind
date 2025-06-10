@@ -1,0 +1,21 @@
+//
+//  Localizable.strings.swift
+//  Reminder
+//
+//  Created by Josileudo on 08/06/25.
+//
+
+
+//tela.propriedade.acao
+
+/* MARK: Login Screen */
+"login.label.title" = "Entre para acessar suas receitas";
+"login.email.placeholder" = "@email@exemplo.com";
+"login.password.placeholder" = "Senha";
+"login.button.title" = "Entrar";
+
+/* MARK: Home Screen */
+
+/* MARK: Receipts Screen */
+
+/* MARK: NewReceipts Screen */

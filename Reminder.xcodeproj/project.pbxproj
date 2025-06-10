@@ -15,16 +15,28 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Resources/Localizable.strings,
 			);
 			target = 2F672C982D1EC794002EE9E3 /* Reminder */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Compile Sources" phase from "Reminder" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 2F672C952D1EC794002EE9E3 /* Sources */;
+			membershipExceptions = (
+				Resources/Localizable.strings,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2F672C9B2D1EC794002EE9E3 /* Reminder */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2F672CAB2D1EC795002EE9E3 /* Exceptions for "Reminder" folder in "Reminder" target */,
+				2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Compile Sources" phase from "Reminder" target */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -45,8 +57,8 @@
 		2F672C902D1EC794002EE9E3 = {
 			isa = PBXGroup;
 			children = (
-				2F672C9B2D1EC794002EE9E3 /* Reminder */,
 				2F672C9A2D1EC794002EE9E3 /* Products */,
+				2F672C9B2D1EC794002EE9E3 /* Reminder */,
 			);
 			sourceTree = "<group>";
 		};
