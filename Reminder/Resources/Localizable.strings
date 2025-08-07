@@ -11,8 +11,9 @@
 /* MARK: Login Screen */
 "login.label.title" = "Entre para acessar suas receitas";
 "login.email.placeholder" = "@email@exemplo.com";
-"login.password.placeholder" = "Senha";
+"login.password.label" = "Senha";
 "login.button.title" = "Entrar";
+"login.email.label" = "E-mail";
 
 /* MARK: Home Screen */
 
