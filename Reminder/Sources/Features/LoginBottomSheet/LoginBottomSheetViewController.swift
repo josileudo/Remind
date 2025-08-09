@@ -11,10 +11,11 @@ import UIKit
 class LoginBottomSheetViewController: UIViewController {
     let loginView = LoginBottomSheetView()
     let heightAnchor: CGFloat = 50.0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loginView.delegate = self
         setupUI()
         setupGesture()
     }
@@ -33,7 +34,7 @@ class LoginBottomSheetViewController: UIViewController {
             loginView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
-        let heightAnchor = loginView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
+        loginView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
     }
 
     private func setupGesture() {
@@ -56,3 +57,8 @@ class LoginBottomSheetViewController: UIViewController {
     }
 }
 
+extension LoginBottomSheetViewController: LoginBottomSheetViewDelegate {
+    func sendLogin(username: String, password: String) {
+        print("username: ", username, "password: ", password)
+    }
+}

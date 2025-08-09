@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class LoginBottomSheetView: UIView {
+/*  MARK: obs -> O delegate tem que ser uma variável fraca, para ser destruída no final, a fim de evitar leaks */
+    public weak var delegate: LoginBottomSheetViewDelegate?
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "login.label.title".localized
@@ -62,6 +65,7 @@ class LoginBottomSheetView: UIView {
         button.tintColor = .white
         button.layer.cornerRadius = Metrics.medium
         button.titleLabel?.font = Typography.subheading
+        button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -127,5 +131,13 @@ class LoginBottomSheetView: UIView {
             loginButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -Metrics.huge),
             loginButton.heightAnchor.constraint(equalToConstant: Metrics.extra)
         ])
+    }
+    
+    @objc
+    private func loginButtonDidTapped() {
+        let password = passwordTextField.text ?? ""
+        let user = emailTextField.text ?? ""
+        
+        delegate?.sendLogin(username: user, password: password)
     }
 }
