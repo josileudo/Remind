@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F6F6F5F2E4CB50B004D193A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F6F6F5E2E4CB50B004D193A /* .gitignore */; };
 		80579E70301FBC358DDC9859 /* Pods_Reminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF219BB6B862871DCE7FF205 /* Pods_Reminder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F672C992D1EC794002EE9E3 /* Reminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6F6F5E2E4CB50B004D193A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		93D8F9D45E5B46979125FC3F /* Pods-Reminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.debug.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.debug.xcconfig"; sourceTree = "<group>"; };
 		CA924C5108089D1D11FC3BA3 /* Pods-Reminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reminder.release.xcconfig"; path = "Target Support Files/Pods-Reminder/Pods-Reminder.release.xcconfig"; sourceTree = "<group>"; };
 		EF219BB6B862871DCE7FF205 /* Pods_Reminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,7 +31,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Sources" build phase */ = {
+		2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Compile Sources" phase from "Reminder" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 2F672C952D1EC794002EE9E3 /* Sources */;
 			membershipExceptions = (
@@ -43,7 +45,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				2F672CAB2D1EC795002EE9E3 /* Exceptions for "Reminder" folder in "Reminder" target */,
-				2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Sources" build phase */,
+				2F6D1EB72DF5E8A000FC8F69 /* Exceptions for "Reminder" folder in "Compile Sources" phase from "Reminder" target */,
 			);
 			path = Reminder;
 			sourceTree = "<group>";
@@ -68,7 +70,6 @@
 				93D8F9D45E5B46979125FC3F /* Pods-Reminder.debug.xcconfig */,
 				CA924C5108089D1D11FC3BA3 /* Pods-Reminder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,7 @@
 				2F672C9B2D1EC794002EE9E3 /* Reminder */,
 				0456FC7C0E02316CBD905523 /* Pods */,
 				A3E4602A4D3547073738BBD5 /* Frameworks */,
+				2F6F6F5E2E4CB50B004D193A /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6F6F5F2E4CB50B004D193A /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,9 +201,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Reminder/Pods-Reminder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
