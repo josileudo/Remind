@@ -19,6 +19,7 @@ class LoginBottomSheetViewController: UIViewController {
         loginView.delegate = self
         setupUI()
         setupGesture()
+        bindSuccessAuth()
     }
 
     private func setupUI() {
@@ -38,8 +39,15 @@ class LoginBottomSheetViewController: UIViewController {
         loginView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.5).isActive = true
     }
 
+
     private func setupGesture() {
 
+    }
+    
+    private func bindSuccessAuth() {
+        loginViewModel.successAuth = {[weak self] in
+            print("Cheguei na controller")
+        }
     }
     
     private func handlePanGesture() {
