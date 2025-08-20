@@ -11,4 +11,8 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+    
+    var trim: String {
+        return NSLocalizedString(self.trimmingCharacters(in: .whitespaces), comment: "")
+    }
 }
