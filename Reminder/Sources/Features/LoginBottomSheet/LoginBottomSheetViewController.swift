@@ -59,9 +59,47 @@ class LoginBottomSheetViewController: UIViewController {
     }
     
     private func bindSuccessAuth() {
-        loginViewModel.successAuth = {[weak self] in
-            self?.flowDelegate?.navigateGoToHome()
+        loginViewModel.successAuth = {[weak self] usernameAuth in
+            self?.presentSaveLoginAuth(email: usernameAuth)
         }
+        
+        loginViewModel.errorAuth = {[weak self] errorMessage in
+            self?.presentErrorLoginAuth(message: errorMessage)
+        }
+    }
+    
+    private func presentErrorLoginAuth(message: String) {
+        let alertController = UIAlertController(title: "Error ao logar",
+                                                message: message,
+                                                preferredStyle: .alert)
+        let retryAction = UIAlertAction(title: "Tentar novamente", style: .default)
+        
+        alertController.addAction(retryAction)
+        
+        self.present(alertController, animated: true)
+    }
+    
+    private func presentSaveLoginAuth(email: String) {
+        let alertController = UIAlertController(title: "Salvar acesso",
+                                                message: "Deseja salvar seu login?",
+                                                preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Salvar",
+                                       style: .default) { _ in
+            let user = User(email: email, isUserSaved: true)
+            UserDefaultsManager.saveLogin(user: user)
+            self.flowDelegate?.navigateToHome()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Não",
+                                         style: .cancel) { _ in
+            self.flowDelegate?.navigateToHome()
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true)
     }
     
     private func handlePanGesture() {

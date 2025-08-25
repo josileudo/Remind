@@ -8,6 +8,6 @@
 import Foundation
 
 struct User: Codable {
-    let emai: String
+    let email: String
     let isUserSaved: Bool
 }

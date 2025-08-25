@@ -32,16 +32,21 @@ extension ReminderFlowController: SplashViewFlowDelegate {
         let loginBottomSheet = viewControllersFactory.makeLoginBottomSheetViewController(flowDelegate: self )
         loginBottomSheet.modalPresentationStyle = .overCurrentContext
         loginBottomSheet.modalTransitionStyle = .crossDissolve
-        
-        self.navigationController?.present(loginBottomSheet, animated: false) {
+        navigationController?.present(loginBottomSheet, animated: false) {
             loginBottomSheet.animateShow()
+        }
+        
+        func navigateToHome() {
+            self.navigationController?.dismiss(animated: true)
+            let homeViewController = HomeViewController()
+            self.navigationController?.pushViewController(homeViewController, animated: true)
         }
     }
 }
 
 // MARK: - Login
 extension ReminderFlowController: LoginBottomSheetFlowDelegate {
-    func navigateGoToHome() {
+    func navigateToHome() {
         self.navigationController?.dismiss(animated: true)
         let homeViewController = HomeViewController()
         self.navigationController?.pushViewController(homeViewController, animated: true)

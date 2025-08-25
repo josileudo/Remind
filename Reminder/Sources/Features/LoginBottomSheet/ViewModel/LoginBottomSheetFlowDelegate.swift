@@ -6,5 +6,5 @@
 //
 
 public protocol LoginBottomSheetFlowDelegate: AnyObject {
-    func navigateGoToHome()
+    func navigateToHome()
 }
