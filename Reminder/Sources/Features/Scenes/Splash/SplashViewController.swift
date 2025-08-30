@@ -45,14 +45,7 @@ class SplashViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ]) // Podemos configurar um a um, o uso do array é para evitar repetição
-        
-        contentView.translatesAutoresizingMaskIntoConstraints = false // sempre deve ser false
+         setupContentViewToBounds(contentView: contentView)
     }
     
     private func setupGesture() {
@@ -62,7 +55,7 @@ class SplashViewController: UIViewController {
     
     @objc
     private func showLoginBottomSheet() {
-        self.startLogoUp()
+        startLogoUp()
         self.flowDelegate?.navigateToLogin()
     }
 }

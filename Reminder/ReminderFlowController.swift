@@ -38,17 +38,18 @@ extension ReminderFlowController: SplashViewFlowDelegate {
         
         func navigateToHome() {
             self.navigationController?.dismiss(animated: true)
-            let homeViewController = HomeViewController()
+            let homeViewController = viewControllersFactory.makeHomeViewController(flowDelegate: self)
             self.navigationController?.pushViewController(homeViewController, animated: true)
         }
     }
 }
 
 // MARK: - Login
-extension ReminderFlowController: LoginBottomSheetFlowDelegate {
+extension ReminderFlowController: LoginBottomSheetFlowDelegate, HomeFlowDelegate
+{
     func navigateToHome() {
         self.navigationController?.dismiss(animated: true)
-        let homeViewController = HomeViewController()
+        let homeViewController = viewControllersFactory.makeHomeViewController(flowDelegate: self)
         self.navigationController?.pushViewController(homeViewController, animated: true)
     }
 }
