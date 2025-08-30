@@ -43,7 +43,7 @@ class SplashViewController: UIViewController {
         setupConstraints()
         setupGesture()
     }
-    
+        
     private func setupConstraints() {
          setupContentViewToBounds(contentView: contentView)
     }
@@ -67,7 +67,7 @@ extension SplashViewController {
             withDuration: 1.5,
             delay: 0.0,
             animations: {
-                self.contentView.logoImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self.contentView.logoImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         }, completion: { _ in
             self.decideNavigateFlow()
         })
